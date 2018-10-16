@@ -6,5 +6,5 @@ target 'ITunesBookSearch' do
   # use_frameworks!
 
   # Pods for ITunesBookSearch
-
+  pod 'SDWebImage'
 end
