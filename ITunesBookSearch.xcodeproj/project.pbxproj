@@ -14,6 +14,8 @@
 		79636072217588ED0047E79D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79636071217588ED0047E79D /* main.m */; };
 		7963607D217590F30047E79D /* BookSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7963607C217590F30047E79D /* BookSearchViewController.m */; };
 		796360802175948E0047E79D /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7963607F2175948E0047E79D /* BookTableViewCell.m */; };
+		796360842175A5E80047E79D /* ItunesBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 796360832175A5E80047E79D /* ItunesBook.m */; };
+		796360872175A7AF0047E79D /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 796360862175A7AF0047E79D /* BookViewController.m */; };
 		8D870788F29217A85C879AA0 /* libPods-ITunesBookSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B08A295DA22FE56E74A19053 /* libPods-ITunesBookSearch.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,10 @@
 		7963607C217590F30047E79D /* BookSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookSearchViewController.m; sourceTree = "<group>"; };
 		7963607E2175948E0047E79D /* BookTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookTableViewCell.h; sourceTree = "<group>"; };
 		7963607F2175948E0047E79D /* BookTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
+		796360822175A5E80047E79D /* ItunesBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItunesBook.h; sourceTree = "<group>"; };
+		796360832175A5E80047E79D /* ItunesBook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItunesBook.m; sourceTree = "<group>"; };
+		796360852175A7AF0047E79D /* BookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
+		796360862175A7AF0047E79D /* BookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		B08A295DA22FE56E74A19053 /* libPods-ITunesBookSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ITunesBookSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,6 +118,8 @@
 			children = (
 				7963607B217590F30047E79D /* BookSearchViewController.h */,
 				7963607C217590F30047E79D /* BookSearchViewController.m */,
+				796360852175A7AF0047E79D /* BookViewController.h */,
+				796360862175A7AF0047E79D /* BookViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,6 +127,8 @@
 		796360812175A4DC0047E79D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				796360822175A5E80047E79D /* ItunesBook.h */,
+				796360832175A5E80047E79D /* ItunesBook.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +237,8 @@
 				796360802175948E0047E79D /* BookTableViewCell.m in Sources */,
 				7963607D217590F30047E79D /* BookSearchViewController.m in Sources */,
 				79636072217588ED0047E79D /* main.m in Sources */,
+				796360872175A7AF0047E79D /* BookViewController.m in Sources */,
+				796360842175A5E80047E79D /* ItunesBook.m in Sources */,
 				79636064217588EA0047E79D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

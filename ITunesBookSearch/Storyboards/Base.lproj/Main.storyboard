@@ -127,21 +127,37 @@
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="118.29085457271366"/>
         </scene>
-        <!--View Controller-->
+        <!--Book View Controller-->
         <scene sceneID="QMZ-M9-dZp">
             <objects>
-                <viewController id="1vb-xe-yay" sceneMemberID="viewController">
+                <viewController id="1vb-xe-yay" customClass="BookViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bDE-7R-sOU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACQ-xe-ern">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACQ-xe-ern">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="WNl-HZ-pFp">
+                                        <rect key="frame" x="20" y="20" width="335" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="Mpf-gq-QxD"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="WNl-HZ-pFp" secondAttribute="bottom" constant="1233" id="9ng-bD-LSx"/>
+                                    <constraint firstItem="WNl-HZ-pFp" firstAttribute="centerX" secondItem="ACQ-xe-ern" secondAttribute="centerX" id="Ako-Ph-ZhR"/>
+                                    <constraint firstItem="WNl-HZ-pFp" firstAttribute="leading" secondItem="ACQ-xe-ern" secondAttribute="leading" constant="20" id="Kbm-PH-nGH"/>
+                                    <constraint firstAttribute="trailing" secondItem="WNl-HZ-pFp" secondAttribute="trailing" constant="20" id="mQT-n0-aXg"/>
+                                    <constraint firstItem="WNl-HZ-pFp" firstAttribute="top" secondItem="ACQ-xe-ern" secondAttribute="top" constant="20" id="u7b-Lr-AU9"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ACQ-xe-ern" firstAttribute="leading" secondItem="5eW-8I-1mw" secondAttribute="leading" id="Dt1-Nm-U7o"/>
+                            <constraint firstItem="5eW-8I-1mw" firstAttribute="top" secondItem="WNl-HZ-pFp" secondAttribute="bottom" constant="-320" id="EP3-9u-kD3"/>
                             <constraint firstItem="ACQ-xe-ern" firstAttribute="trailing" secondItem="5eW-8I-1mw" secondAttribute="trailing" id="P21-Nm-JTD"/>
                             <constraint firstItem="ACQ-xe-ern" firstAttribute="top" secondItem="5eW-8I-1mw" secondAttribute="top" id="R4x-QQ-DNv"/>
                             <constraint firstItem="ACQ-xe-ern" firstAttribute="bottom" secondItem="5eW-8I-1mw" secondAttribute="bottom" id="q5h-WL-CM2"/>

@@ -7,6 +7,8 @@
 //
 
 #import "BookSearchViewController.h"
+#import "ItunesBook.h"
+#import "BookViewController.h"
 
 @interface BookSearchViewController ()
 
@@ -27,6 +29,7 @@ CGFloat const bookCellHeight = 160.0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.books = [NSArray new];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +40,7 @@ CGFloat const bookCellHeight = 160.0;
 #pragma mark - TableViewDatasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [self.books count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,17 +52,23 @@ CGFloat const bookCellHeight = 160.0;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self performSegueWithIdentifier:@"ShowBook" sender:nil];
+    [self performSegueWithIdentifier:@"ShowBook" sender:[self.books objectAtIndex:indexPath.row]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return bookCellHeight;
 }
 
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    return [self.books count] == 0 ? @"Start searching for books!" : @"Books";
+}
 #pragma mark - SearchBar
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     self.searchedText = searchText;
+    self.books = [self.books arrayByAddingObject:[ItunesBook new]];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Navigation
@@ -69,7 +78,7 @@ CGFloat const bookCellHeight = 160.0;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString: @"ShowBook"]){
-        
+        ((BookViewController*)segue.destinationViewController).book = (ItunesBook*)sender;
     }
 }
 
