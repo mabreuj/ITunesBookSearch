@@ -12,6 +12,8 @@
 		7963606C217588ED0047E79D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7963606B217588ED0047E79D /* Assets.xcassets */; };
 		7963606F217588ED0047E79D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7963606D217588ED0047E79D /* LaunchScreen.storyboard */; };
 		79636072217588ED0047E79D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79636071217588ED0047E79D /* main.m */; };
+		7963607D217590F30047E79D /* BookSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7963607C217590F30047E79D /* BookSearchViewController.m */; };
+		796360802175948E0047E79D /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7963607F2175948E0047E79D /* BookTableViewCell.m */; };
 		8D870788F29217A85C879AA0 /* libPods-ITunesBookSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B08A295DA22FE56E74A19053 /* libPods-ITunesBookSearch.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,10 @@
 		7963606E217588ED0047E79D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79636070217588ED0047E79D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79636071217588ED0047E79D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7963607B217590F30047E79D /* BookSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookSearchViewController.h; sourceTree = "<group>"; };
+		7963607C217590F30047E79D /* BookSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookSearchViewController.m; sourceTree = "<group>"; };
+		7963607E2175948E0047E79D /* BookTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookTableViewCell.h; sourceTree = "<group>"; };
+		7963607F2175948E0047E79D /* BookTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
 		B08A295DA22FE56E74A19053 /* libPods-ITunesBookSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ITunesBookSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +100,8 @@
 		796360792175890F0047E79D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7963607E2175948E0047E79D /* BookTableViewCell.h */,
+				7963607F2175948E0047E79D /* BookTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -101,6 +109,8 @@
 		7963607A217589150047E79D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7963607B217590F30047E79D /* BookSearchViewController.h */,
+				7963607C217590F30047E79D /* BookSearchViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -186,15 +196,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ITunesBookSearch-checkManifestLockResult.txt",
 			);
@@ -210,6 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796360802175948E0047E79D /* BookTableViewCell.m in Sources */,
+				7963607D217590F30047E79D /* BookSearchViewController.m in Sources */,
 				79636072217588ED0047E79D /* main.m in Sources */,
 				79636064217588EA0047E79D /* AppDelegate.m in Sources */,
 			);
