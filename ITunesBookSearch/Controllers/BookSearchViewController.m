@@ -12,10 +12,17 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIView *noBooksPlaceholderView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityIndicator;
+
+@property NSArray* books;
+@property NSString* searchedText;
 
 @end
 
 @implementation BookSearchViewController
+
+CGFloat const bookCellHeight = 160.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,13 +48,18 @@
 #pragma mark - TableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self performSegueWithIdentifier:@"ShowBook" sender:nil];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return bookCellHeight;
 }
 
 #pragma mark - SearchBar
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    
+    self.searchedText = searchText;
 }
 
 #pragma mark - Navigation

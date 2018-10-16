@@ -31,7 +31,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miguel Abreu ITunes Book Search" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPa-ch-LWI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miguel Abreu ITunes Book Search" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPa-ch-LWI">
                                 <rect key="frame" x="90.5" y="309" width="194.5" height="50.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,6 +48,7 @@
                             <constraint firstItem="kMj-eT-gjQ" firstAttribute="leading" secondItem="GMN-Um-JoX" secondAttribute="trailing" constant="4" id="gHd-eL-Jdk"/>
                             <constraint firstItem="gPa-ch-LWI" firstAttribute="centerY" secondItem="aM9-NZ-YsE" secondAttribute="centerY" id="iVo-bN-xbB"/>
                             <constraint firstItem="gPa-ch-LWI" firstAttribute="centerX" secondItem="aM9-NZ-YsE" secondAttribute="centerX" id="nXr-h2-kUU"/>
+                            <constraint firstItem="GMN-Um-JoX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tlM-cX-Ol9" secondAttribute="leading" constant="20" id="sk7-ov-BaV"/>
                             <constraint firstItem="tlM-cX-Ol9" firstAttribute="bottom" secondItem="GMN-Um-JoX" secondAttribute="bottom" constant="20" id="vvY-K6-gNl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tlM-cX-Ol9"/>

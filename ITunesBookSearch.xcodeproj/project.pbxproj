@@ -76,6 +76,7 @@
 		79636061217588EA0047E79D /* ITunesBookSearch */ = {
 			isa = PBXGroup;
 			children = (
+				796360812175A4DC0047E79D /* Models */,
 				7963607A217589150047E79D /* Controllers */,
 				796360792175890F0047E79D /* Views */,
 				79636078217589020047E79D /* Storyboards */,
@@ -113,6 +114,13 @@
 				7963607C217590F30047E79D /* BookSearchViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		796360812175A4DC0047E79D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9DA5482C56B485A8C1317D41 /* Pods */ = {
