@@ -118,7 +118,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="SZb-Uc-RDK"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="Kcf-cn-k3u" id="dpQ-os-y0F"/>
+                        <outlet property="activityIndicator" destination="Adi-40-Ua9" id="LyM-Pb-t1I"/>
                         <outlet property="noBooksPlaceholderView" destination="PHl-05-wOE" id="O9g-NW-ETq"/>
                         <outlet property="searchBar" destination="D8w-bk-HbH" id="raL-O4-b6L"/>
                         <outlet property="tableView" destination="lab-hV-lTF" id="EWS-Ue-Rx5"/>

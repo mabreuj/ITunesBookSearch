@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIView *noBooksPlaceholderView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property NSArray* books;
 @property NSString* searchedText;
@@ -33,11 +33,28 @@ CGFloat const bookCellHeight = 100.0;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.books = [NSArray new];
+    self.searchedText = @"";
+    [self updateUI];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UI
+
+- (void)updateUI {
+    [self.tableView reloadData];
+    [self.noBooksPlaceholderView setHidden:!([self.books count] == 0 && ![self.searchedText isEqualToString:@""])];
+}
+
+- (void)startLoading {
+    [self.activityIndicator startAnimating];
+}
+
+- (void)stopLoading {
+    [self.activityIndicator stopAnimating];
 }
 
 #pragma mark - TableViewDatasource
@@ -67,20 +84,23 @@ CGFloat const bookCellHeight = 100.0;
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
     return [self.books count] == 0 ? @"Start searching for books!" : @"Books";
 }
 #pragma mark - SearchBar
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     self.searchedText = searchText;
+    [self startLoading];
     if (self.searchTask != nil) {
         [self.searchTask cancel];
     }
     self.searchTask = [ItunesManager searchBooks:self.searchedText completionHandler:^(NSArray* books, NSError* _Nullable error) {
         self.books = books;
         self.searchTask = nil;
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateUI];
+            [self stopLoading];
+        });
     }];
     [self.searchTask resume];
 }
