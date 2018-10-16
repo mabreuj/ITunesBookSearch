@@ -10,5 +10,4 @@
 
 @interface BookSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
-
 @end

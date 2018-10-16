@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *artistNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bookDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sizeLabel;
+@property NSDateFormatter* dateFormatter;
 
 @end
 
@@ -25,8 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.dateFormatter = [NSDateFormatter new];
+    [self.dateFormatter setDateFormat:@"MMM dd yyyy"];
     [self loadUI];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,8 +40,15 @@
 #pragma mark - UI Update
 
 - (void)loadUI {
-    [self setTitle:self.book.artistName];
     [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:self.book.artworkUrl] placeholderImage:[UIImage imageNamed:@"bookPlaceHolder"]];
+    [self setTitle:self.book.title];
+    self.titleLabel.text = self.book.title;
+    self.artistNameLabel.text = self.book.artistName;
+    self.releaseDateLabel.text = [self.dateFormatter stringFromDate:self.book.releaseDate];
+    self.bookDescriptionLabel.text = self.book.bookDescription;
+    self.priceLabel.text = self.book.formattedPrice;
+    
+    
     
 }
 

@@ -18,4 +18,6 @@
 @property NSDate* releaseDate;
 @property NSInteger fileSizeBytes;
 
+-(id)initWithDict:(NSDictionary*)dict;
+
 @end

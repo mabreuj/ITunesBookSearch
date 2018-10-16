@@ -16,6 +16,7 @@
 		796360802175948E0047E79D /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7963607F2175948E0047E79D /* BookTableViewCell.m */; };
 		796360842175A5E80047E79D /* ItunesBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 796360832175A5E80047E79D /* ItunesBook.m */; };
 		796360872175A7AF0047E79D /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 796360862175A7AF0047E79D /* BookViewController.m */; };
+		7963608B2175C33D0047E79D /* ItunesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7963608A2175C33D0047E79D /* ItunesManager.m */; };
 		8D870788F29217A85C879AA0 /* libPods-ITunesBookSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B08A295DA22FE56E74A19053 /* libPods-ITunesBookSearch.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,8 @@
 		796360832175A5E80047E79D /* ItunesBook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItunesBook.m; sourceTree = "<group>"; };
 		796360852175A7AF0047E79D /* BookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		796360862175A7AF0047E79D /* BookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		796360892175C33D0047E79D /* ItunesManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItunesManager.h; sourceTree = "<group>"; };
+		7963608A2175C33D0047E79D /* ItunesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItunesManager.m; sourceTree = "<group>"; };
 		B08A295DA22FE56E74A19053 /* libPods-ITunesBookSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ITunesBookSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,6 +85,7 @@
 		79636061217588EA0047E79D /* ITunesBookSearch */ = {
 			isa = PBXGroup;
 			children = (
+				796360882175C3260047E79D /* Manager */,
 				796360812175A4DC0047E79D /* Models */,
 				7963607A217589150047E79D /* Controllers */,
 				796360792175890F0047E79D /* Views */,
@@ -131,6 +135,15 @@
 				796360832175A5E80047E79D /* ItunesBook.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		796360882175C3260047E79D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				796360892175C33D0047E79D /* ItunesManager.h */,
+				7963608A2175C33D0047E79D /* ItunesManager.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		9DA5482C56B485A8C1317D41 /* Pods */ = {
@@ -238,6 +251,7 @@
 				7963607D217590F30047E79D /* BookSearchViewController.m in Sources */,
 				79636072217588ED0047E79D /* main.m in Sources */,
 				796360872175A7AF0047E79D /* BookViewController.m in Sources */,
+				7963608B2175C33D0047E79D /* ItunesManager.m in Sources */,
 				796360842175A5E80047E79D /* ItunesBook.m in Sources */,
 				79636064217588EA0047E79D /* AppDelegate.m in Sources */,
 			);

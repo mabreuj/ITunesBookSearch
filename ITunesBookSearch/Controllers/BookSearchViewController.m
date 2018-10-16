@@ -10,6 +10,7 @@
 #import "ItunesBook.h"
 #import "BookViewController.h"
 #import "BookTableViewCell.h"
+#import "ItunesManager.h"
 
 @interface BookSearchViewController ()
 
@@ -20,6 +21,7 @@
 
 @property NSArray* books;
 @property NSString* searchedText;
+@property NSURLSessionDataTask* searchTask;
 
 @end
 
@@ -72,12 +74,15 @@ CGFloat const bookCellHeight = 100.0;
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     self.searchedText = searchText;
-    ItunesBook* book = [ItunesBook new];
-    book.artistName = @"Jhon Cena";
-    book.artworkUrl = @"https://is5-ssl.mzstatic.com/image/thumb/Publication18/v4/7f/62/c4/7f62c4ab-6157-1aac-e353-2df35ab85453/source/100x100bb.jpg";
-    book.bookDescription = @"Tempting boys to be what they should be—giving them in wholesome form what they want—that is the purpose and power of Scouting. To help parents and leaders of youth secure books boys like best that are also best for boys, the Boy Scouts of America organized EVER";
-    self.books = [self.books arrayByAddingObject:book];
-    [self.tableView reloadData];
+    if (self.searchTask != nil) {
+        [self.searchTask cancel];
+    }
+    self.searchTask = [ItunesManager searchBooks:self.searchedText completionHandler:^(NSArray* books, NSError* _Nullable error) {
+        self.books = books;
+        self.searchTask = nil;
+        [self.tableView reloadData];
+    }];
+    [self.searchTask resume];
 }
 
 #pragma mark - Navigation

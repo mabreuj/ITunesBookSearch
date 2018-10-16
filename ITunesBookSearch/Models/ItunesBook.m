@@ -10,4 +10,9 @@
 
 @implementation ItunesBook
 
+-(id)initWithDict:(NSDictionary*)dict{
+    
+    return self;
+}
+
 @end
