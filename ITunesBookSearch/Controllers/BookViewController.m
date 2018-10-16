@@ -47,9 +47,8 @@
     self.releaseDateLabel.text = [self.dateFormatter stringFromDate:self.book.releaseDate];
     self.bookDescriptionLabel.text = self.book.bookDescription;
     self.priceLabel.text = self.book.formattedPrice;
-    
-    
-    
+    self.sizeLabel.text = [NSByteCountFormatter stringFromByteCount:self.book.fileSizeBytes countStyle:NSByteCountFormatterCountStyleFile];
+
 }
 
 /*

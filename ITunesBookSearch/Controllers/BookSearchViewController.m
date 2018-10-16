@@ -46,7 +46,7 @@ CGFloat const bookCellHeight = 100.0;
 
 - (void)updateUI {
     [self.tableView reloadData];
-    [self.noBooksPlaceholderView setHidden:!([self.books count] == 0 && ![self.searchedText isEqualToString:@""])];
+    [self.noBooksPlaceholderView setHidden:!([self.books count] == 0 && ![self.searchedText isEqualToString:@""] && !self.searchTask)];
 }
 
 - (void)startLoading {
@@ -86,6 +86,7 @@ CGFloat const bookCellHeight = 100.0;
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [self.books count] == 0 ? @"Start searching for books!" : @"Books";
 }
+
 #pragma mark - SearchBar
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
