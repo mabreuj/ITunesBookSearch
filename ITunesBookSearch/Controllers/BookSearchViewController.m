@@ -5,10 +5,11 @@
 //  Created by MetaTedi on 10/15/18.
 //  Copyright © 2018 Tedev. All rights reserved.
 //
-
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "BookSearchViewController.h"
 #import "ItunesBook.h"
 #import "BookViewController.h"
+#import "BookTableViewCell.h"
 
 @interface BookSearchViewController ()
 
@@ -24,7 +25,7 @@
 
 @implementation BookSearchViewController
 
-CGFloat const bookCellHeight = 160.0;
+CGFloat const bookCellHeight = 100.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,7 +45,11 @@ CGFloat const bookCellHeight = 160.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
+    BookTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
+    ItunesBook* book = [self.books objectAtIndex:indexPath.row];
+    cell.titleLabel.text = book.title;
+    cell.descriptionLabel.text = book.bookDescription;
+    [cell.coverImageView sd_setImageWithURL:[NSURL URLWithString: book.artworkUrl] placeholderImage:[UIImage imageNamed:@"bookPlaceHolder"]];
     return cell;
 }
 
@@ -67,7 +72,11 @@ CGFloat const bookCellHeight = 160.0;
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     self.searchedText = searchText;
-    self.books = [self.books arrayByAddingObject:[ItunesBook new]];
+    ItunesBook* book = [ItunesBook new];
+    book.artistName = @"Jhon Cena";
+    book.artworkUrl = @"https://is5-ssl.mzstatic.com/image/thumb/Publication18/v4/7f/62/c4/7f62c4ab-6157-1aac-e353-2df35ab85453/source/100x100bb.jpg";
+    book.bookDescription = @"Tempting boys to be what they should be—giving them in wholesome form what they want—that is the purpose and power of Scouting. To help parents and leaders of youth secure books boys like best that are also best for boys, the Boy Scouts of America organized EVER";
+    self.books = [self.books arrayByAddingObject:book];
     [self.tableView reloadData];
 }
 

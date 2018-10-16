@@ -11,10 +11,11 @@
 @interface ItunesBook : NSObject
 
 @property NSString* artworkUrl;
+@property NSString* title;
 @property NSString* bookDescription;
 @property NSString* artistName;
 @property NSString* formattedPrice;
-@property NSInteger fileSizeBytes;
 @property NSDate* releaseDate;
+@property NSInteger fileSizeBytes;
 
 @end
